@@ -1,0 +1,52 @@
+body {
+	margin:0px;
+	padding:0px;
+}
+
+#topBar {
+	background-color: #171814;
+	width:100%;
+	height:100px;
+}
+
+#title {
+	font-size:50px;
+	color:#FFFFFF;
+	text-align:left;
+	padding:15px 15px 15px 60px;
+	font-family:'Helvetica Neue';
+	font-weight:100;
+}
+
+#box {
+	background-color:#272822;
+	width:20%;
+	float:right;
+}
+
+#movieTimes {
+	height:50px;
+	background: url("images/blue-wallpaper.jpg");
+}
+
+#movieTimes ul {
+	margin:0px;
+}
+
+#messagesDiv {
+	font-family:'Helvetica Neue';
+	font-size:15px;
+	color:#FFFFFF;
+	padding:10px;
+	height:442px;
+	font-weight:100;
+}
+
+#bottomBar {
+	width:100%;
+	height:80px;
+	background-color:#171814;
+	position:absolute;
+	bottom:-47px;
+}
+
