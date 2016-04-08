@@ -1,4 +1,4 @@
-angular.module('app', []); //take other modules as dependencies ok
+angular.module('app', []); //take other modules as dependencies 
 
 //AJAX
 
