@@ -1,0 +1,8 @@
+{
+	"name": "chatTV",
+	"dependencies": {
+		"express": "latest",
+		"mongoose": "latest",
+		"body-parser":"latest"
+	}
+}
