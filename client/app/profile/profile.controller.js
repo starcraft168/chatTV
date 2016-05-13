@@ -8,20 +8,16 @@
 	profileController.$inject = ['$scope', 'profileService'];
 
 	function profileController($scope, profileService) {
-		// var views = getViews();
 
+		// profileService.request().then(function(views) {
+		// 	$scope.views = views;
+		// });
 
-
-
-		profileService.request().then(function(views) {
-			console.log(views);
-			$scope.views = views;
-		});
-
+		console.log(profileService.numberOfViews);
 
 
 		$scope.show = show;
-		$scope.getVideo = getVideo
+		$scope.getVideo = getVideo;
 
 		function show() {
 			return 'hello';
