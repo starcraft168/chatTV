@@ -15,6 +15,7 @@
 
 		return service;
 
+
 		////////////////
 		function request() {
 			return $http({
@@ -22,11 +23,17 @@
 				url: 'https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=month'
 			}).then(function success(response) {
 				console.log('success');
-				console.log(response);
+				console.log(response.data);
+				console.log(response.data.videos[0].views);
+				var numberOfViews = response.data.videos[0].views;
+				return numberOfViews;
 			}, function error(response) {
 				console.log('error');
 			});
 		}
+
+
+
 
 
 
