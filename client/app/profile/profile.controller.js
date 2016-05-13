@@ -9,9 +9,9 @@
 
 	function profileController($scope, profileService) {
 
-		// profileService.request().then(function(views) {
-		// 	$scope.views = views;
-		// });
+		profileService.request().then(function(views) {
+			$scope.views = views;
+		});
 
 		console.log(profileService.numberOfViews);
 
