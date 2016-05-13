@@ -5,23 +5,30 @@
 		.module('app.profile')
 		.factory('profileService', profileService);
 
-	function profileService() {
+	profileService.$inject = ['$http']
+
+	function profileService($http) {
 
 		var service = {
-			request: request,
-			request2: request2
+			request: request
 		}
 
 		return service;
 
 		////////////////
 		function request() {
-			return 'hi';
+			return $http({
+				method: 'GET',
+				url: 'https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=month'
+			}).then(function success(response) {
+				console.log('success');
+				console.log(response);
+			}, function error(response) {
+				console.log('error');
+			});
 		}
 
-		function request2() {
-			return 'bye'
-		}
+
 
 	}
 

@@ -11,7 +11,6 @@
 		$routeProvider.when('/profile', {
 			templateUrl: 'app/profile/profile.html',
 			controller: 'profileController',
-			controllerAs: 'vm'
 		});
 	}
 

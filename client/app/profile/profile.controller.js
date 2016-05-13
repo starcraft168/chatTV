@@ -5,15 +5,18 @@
 		.module('app.profile')
 		.controller('profileController', profileController);
 
-	profileController.$inject = ['profileService'];
+	profileController.$inject = ['$scope', 'profileService'];
 
-	function profileController(profileService) {
-		var vm = this;
-
-		vm.show = show;
+	function profileController($scope, profileService) {
+		$scope.show = show;
+		$scope.getVideo = getVideo
 
 		function show() {
-			return 'hello ' + profileService.request();
+			return 'hello';
+		}
+
+		function getVideo() {
+			return profileService.request();
 		}
 
 	}
