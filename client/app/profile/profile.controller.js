@@ -5,27 +5,34 @@
 		.module('app.profile')
 		.controller('profileController', profileController);
 
-	profileController.$inject = ['$scope', 'profileService'];
+	profileController.$inject = ['$scope', '$sce', 'profileService'];
 
-	function profileController($scope, profileService) {
+	function profileController($scope, $sce, profileService) {
 
-		profileService.request().then(function(views) {
-			$scope.views = views;
+		profileService.request().then(function(data) {
+			console.log('data', data.videos[0]._id);
+			console.log('title', data.videos[0].title)
+			$scope.title = data.videos[0].title;
+			$scope.videos = $sceDelegate.trustAs(data.videos);
+			console.log('yay', $scope.videos);
 		});
 
-		console.log(profileService.numberOfViews);
-
-
 		$scope.show = show;
-		$scope.getVideo = getVideo;
+		// $scope.getVideo = getVideo();
 
 		function show() {
 			return 'hello';
 		}
 
-		function getVideo() {
-			return profileService.request();
-		}
+		// function getVideo() {
+		// 	profileService.request().then(function(data) {
+		// 		console.log('data', data.videos[0]._id);
+		// 		console.log('title', data.videos[0].title)
+		// 		$scope.title = data.videos[0].title;
+		// 		$scope.videos = data.videos[0]._id;
+		// 		console.log('yay', $scope.videos);
+		// 	});
+		// }
 
 
 
