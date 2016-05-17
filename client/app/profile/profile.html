@@ -10,15 +10,15 @@
 </iframe> -->
 
 <div ng-repeat="video in videos">
-	{{video._id}}
+	{{getIframeSrc(video._id)}}
 <!-- 	<iframe 
-  src="http://player.twitch.tv/?video={{video._id}}"
-  height="300" 
-  width="300" 
-  frameborder="0" 
-  scrolling="no"
-  allowfullscreen="true"
-  autoplay="true">
-</iframe> -->
+	  src="http://player.twitch.tv/?video={{getIframeSrc(video._id)}}"
+	  height="300" 
+	  width="300" 
+	  frameborder="0" 
+	  scrolling="no"
+	  allowfullscreen="true"
+	  autoplay="true">
+	</iframe> -->
 	<!-- {{getIframeSrc()}} -->
 </div>
