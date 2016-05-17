@@ -10,6 +10,13 @@
 		'app.profile'
 
 
-	]);
+	])
+	// 	.config(function($sceDelegateProvider) {
+	// 	$sceDelegateProvider.resourceUrlWhitelist([
+	// 		'self',
+	// 		'http://player.twitch.tv/**'
+
+	// 	]);
+	// });
 
 })();
