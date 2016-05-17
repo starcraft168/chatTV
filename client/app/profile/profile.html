@@ -11,7 +11,7 @@
 
 <div ng-repeat="video in videos">
 	<iframe 
-	  src={{getIframeSrc(video._id)}}
+	  ng-src={{getIframeSrc(video._id)}}
 	  height="300" 
 	  width="300" 
 	  frameborder="0" 
