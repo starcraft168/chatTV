@@ -24,7 +24,7 @@
 		}
 
 		function getIframeSrc(videoId) {
-			return $sce.trustAsResourceUrl("http://player.twitch.tv/?video=" + videoId);
+			return $sce.trustAsResourceUrl("http://player.twitch.tv/?video=" + videoId +"/?muted=true/?autoplay=true");
 		}
 
 
