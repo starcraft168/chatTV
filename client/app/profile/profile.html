@@ -1,15 +1,7 @@
-<button ng-click="getVideo()">getVideo</button>
+<!-- <button ng-click="getVideo()">getVideo</button> -->
 
-<!-- <iframe 
-  src="http://player.twitch.tv/?video={{getVideo}}"
-  height="300" 
-  width="300" 
-  frameborder="0" 
-  scrolling="no"
-  allowfullscreen="true">
-</iframe> -->
 
-<div ng-repeat="video in videos">
+<!-- <div ng-repeat="video in videos">
 	<iframe 
 	  ng-src={{getIframeSrc(video._id)}}
 	  height="300" 
@@ -19,8 +11,26 @@
 	  allowfullscreen="true"
 	  autoplay="true">
 	</iframe>
-	<!-- {{getIframeSrc()}} -->
-</div>
+</div> -->
 
-<div>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6"></div>
+	<div class="col-md-3"></div>
+</div>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		{{title}}
+		<iframe 
+		  ng-src={{getIframeSrc("v62921775")}}
+		  height="600px" 
+		  width="100%" 
+		  frameborder="0" 
+		  scrolling="no"
+		  allowfullscreen="true"
+		  autoplay="false">
+		</iframe>
+	</div>
+	<div class="col-md-3"></div>
 </div>
