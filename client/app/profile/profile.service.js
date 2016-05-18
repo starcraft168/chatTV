@@ -19,7 +19,7 @@
 		function request() {
 			return $http({
 				method: 'GET',
-				url: 'https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=month'
+				url: 'https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=week'
 			}).then(function(response) {
 				console.log('success');
 				return response.data;

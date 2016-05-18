@@ -1,19 +1,4 @@
-<!-- <button ng-click="getVideo()">getVideo</button> -->
 
-
-<!-- <div ng-repeat="video in videos">
-	<iframe 
-	  ng-src={{getIframeSrc(video._id)}}
-	  height="300" 
-	  width="300" 
-	  frameborder="0" 
-	  scrolling="no"
-	  allowfullscreen="true"
-	  autoplay="true">
-	</iframe>
-</div> -->
-
-<!-- http://player.twitch.tv/?video=v62921775 -->
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-6"></div>
@@ -24,23 +9,14 @@
 		<div style="padding: 10px 0px 0px 30px;"><h3>List of Shows</h3></div>
 		<div style="padding-left: 30px" ng-repeat="video in videos">
 
-			{{video.title}}
-<!-- 			<iframe
-				ng-src={{getIframeSrc(video._id)}}
-				height="100%"
-				width="100%"
-				frameborder="1px"
-				scrolling="yes"
-				allowfullscreen="false"
-			>
+			<div>{{video.title}}</div>
 
-			</iframe> -->
 		</div>
 	</div>
 	<div class="col-md-6">
 		<h3><span style="color:green">Now Playing:</span> {{title}}</h3>
 		<iframe 
-		  src={{getIframeSrc("v62921775")}}
+		  src={{getIframeSrc(currentVideo)}}
 		  height="500px" 
 		  width="100%" 
 		  frameborder="0" 
