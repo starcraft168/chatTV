@@ -1,8 +1,17 @@
 body {
-	background-color:lightblue;
+	background-color:#FFFFFF;
 }
 
 h2 {
 	color:white;
 	padding:10px 50px;
 }
+
+a:link {
+	text-decoration: none;
+	color:green;
+};
+
+a:hover {
+	color:blue;
+};

@@ -8,27 +8,31 @@
 	profileController.$inject = ['$scope', '$sce', 'profileService'];
 
 	function profileController($scope, $sce, profileService) {
+		
+		$scope.getIframeSrc = getIframeSrc;
+		$scope.selectVideo = selectVideo;
+
 		profileService.request().then(function(data) {
 			$scope.title = data.videos[0].title;
+			$scope.currentVideo = data.videos[0]._id;
 			$scope.videos = data.videos;
 			console.log('all video data', $scope.videos);
 		});
   
-		$scope.getIframeSrc = getIframeSrc;
-		$scope.selectVideo = selectVideo
 
 		function getIframeSrc(videoId) {
 			return $sce.trustAsResourceUrl("http://player.twitch.tv/?video=" + videoId +"/&muted=true/&autoplay=false");
 		}
 
-		function selectVideo() {
-			profileService.request().then(function(data) {
-				var videoId = data.videos[0]._id;
-				$scope.currentVideo = videoId;
-			});
+		function selectVideo(video) {
+			console.log('clicked', video._id);
+			$scope.currentVideo = video._id;
+			$scope.title = video.title;
+			// profileService.request().then(function(data) {
+			// 	var videoId = data.videos[0]._id;
+			// 	$scope.currentVideo = videoId;
+			// });
 		}
-
-		selectVideo();
 	}
 
 
