@@ -19,12 +19,14 @@
 	<div class="col-md-3"></div>
 </div>
 <div class="row">
-	<div class="col-md-3"></div>
+	<div class="col-md-3">
+		<div style="padding: 10px 0px 0px 30px;"><h3>List of Shows</h3></div>
+	</div>
 	<div class="col-md-6">
-		{{title}}
+		<h3><span style="color:green">Now Playing:</span> {{title}}</h3>
 		<iframe 
 		  ng-src={{getIframeSrc("v62921775")}}
-		  height="600px" 
+		  height="500px" 
 		  width="100%" 
 		  frameborder="0" 
 		  scrolling="no"
@@ -32,5 +34,7 @@
 		  autoplay="false">
 		</iframe>
 	</div>
-	<div class="col-md-3"></div>
+	<div class="col-md-3">
+		<h3 style="padding: 10px;">Chat Box</h3>
+	</div>
 </div>

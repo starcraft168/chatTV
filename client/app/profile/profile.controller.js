@@ -13,11 +13,10 @@
 			console.log('title', data.videos[0].title)
 			$scope.title = data.videos[0].title;
 			$scope.videos = data.videos;
-			console.log('yay', $scope.videos);
+			console.log('all video data', $scope.videos);
 		});
   
 		$scope.show = show;
-		// $scope.getVideo = getVideo();
 		$scope.getIframeSrc = getIframeSrc;
 
 		function show() {
@@ -27,6 +26,7 @@
 		function getIframeSrc(videoId) {
 			return $sce.trustAsResourceUrl("http://player.twitch.tv/?video=" + videoId);
 		}
+
 
 
 	}

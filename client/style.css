@@ -2,10 +2,7 @@ body {
 	background-color:lightblue;
 }
 
-#title {
-	font-family: "Helvetica-Neue";
-	font-weight:100;
-	font-size:20px;
+h2 {
 	color:white;
-	padding:20px 50px;
+	padding:10px 50px;
 }
