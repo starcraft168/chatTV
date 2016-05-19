@@ -13,6 +13,7 @@
 		$scope.selectVideo = selectVideo;
 		$scope.searchVideo = searchVideo;
 
+		//place this in the resolve
 		profileService.request().then(function(data) {
 			$scope.title = data.videos[0].title;
 			$scope.currentVideo = data.videos[0]._id;
