@@ -6,9 +6,10 @@
 </div>
 <div class="row">
 	<div class="col-md-3">
-		<div style="padding: 10px 0px 0px 30px;"><h3>Top Shows</h3></div>
-		<div style="padding-left: 30px" ng-repeat="video in videos">
+		<div style="padding: 10px 30px 0px 30px;"><h3>Top Shows</h3></div>
+		<div style="padding: 10px 0px 0px 30px;" ng-repeat="video in videos">
 				<a href="#/profile" ng-click="selectVideo(video)">{{video.title}}</a>
+				<div ng-click="selectVideo(video)"><img style="width:250px;" src="{{video.preview}}"></div>
 		</div>
 	</div>
 	<div class="col-md-6">
@@ -30,4 +31,12 @@
 	<div class="col-md-3">
 		<h3 style="padding: 10px;">Chat Box</h3>
 	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<!-- <img src="{{preview}}"> -->
+	</div>
+	<div class="col-md-3"></div>
 </div>

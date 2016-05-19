@@ -16,6 +16,7 @@
 			$scope.title = data.videos[0].title;
 			$scope.currentVideo = data.videos[0]._id;
 			$scope.views = data.videos[0].views;
+			$scope.preview = data.videos[0].preview;
 			$scope.videos = data.videos;
 			console.log('all video data', $scope.videos);
 		});
@@ -29,6 +30,7 @@
 			$scope.currentVideo = video._id;
 			$scope.title = video.title;
 			$scope.views = video.views;
+			$scope.preview = video.preview;
 		}
 	}
 
