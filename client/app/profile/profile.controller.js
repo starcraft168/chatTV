@@ -15,6 +15,7 @@
 		profileService.request().then(function(data) {
 			$scope.title = data.videos[0].title;
 			$scope.currentVideo = data.videos[0]._id;
+			$scope.views = data.videos[0].views;
 			$scope.videos = data.videos;
 			console.log('all video data', $scope.videos);
 		});
@@ -25,13 +26,9 @@
 		}
 
 		function selectVideo(video) {
-			console.log('clicked', video._id);
 			$scope.currentVideo = video._id;
 			$scope.title = video.title;
-			// profileService.request().then(function(data) {
-			// 	var videoId = data.videos[0]._id;
-			// 	$scope.currentVideo = videoId;
-			// });
+			$scope.views = video.views;
 		}
 	}
 
