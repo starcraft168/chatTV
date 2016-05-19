@@ -11,6 +11,7 @@
 		
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
+		$scope.searchVideo = searchVideo;
 
 		profileService.request().then(function(data) {
 			$scope.title = data.videos[0].title;
@@ -32,6 +33,12 @@
 			$scope.views = video.views;
 			$scope.preview = video.preview;
 		}
+
+		function searchVideo() {
+
+		}
+
+
 	}
 
 

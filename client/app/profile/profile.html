@@ -2,16 +2,21 @@
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-6">
-		<div>
-			<h3>Search:</h3><input placeholder="Search for your favorite video"></input>
-		</div>
+		<form>
+			<div class="form-group">
+				<label style="font-size:150%" for="search">Search:</label>
+				<input type="text" class="form-control" ng-model="search.title" placeholder="Search for your favorite video"></input>
+			</div>
+			<!-- <button type="submit" class="btn btn-default pull-right">Submit</button> -->
+		</form>
 	</div>
 	<div class="col-md-3"></div>
 </div>
+{{search}}
 <div class="row">
 	<div class="col-md-3">
 		<div style="padding: 10px 30px 0px 30px;"><h3>Top Shows</h3></div>
-		<div style="padding: 10px 0px 0px 30px;" ng-repeat="video in videos">
+		<div style="padding: 10px 0px 0px 30px;" ng-repeat="video in videos | filter: search.title">
 				<a href="#/profile" ng-click="selectVideo(video)">{{video.title}}</a>
 				<div ng-click="selectVideo(video)"><img style="width:250px;" src="{{video.preview}}"></div>
 		</div>
@@ -27,10 +32,7 @@
 		  allowfullscreen="true"
 		  >
 		</iframe>
-		<div class="row">
-			<div class="col-md-9"></div>
-			<div class="col-md-3"><h5>Total views: {{views}}</h5></div>
-		</div>
+		<div class="pull-right"><h5>Total views: {{views}}</h5></div>
 	</div>
 	<div class="col-md-3">
 		<h3 style="padding: 10px;">Chat Box</h3>
