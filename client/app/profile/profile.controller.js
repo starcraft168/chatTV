@@ -42,6 +42,9 @@
 		//need to save the message in the server
 		function addText() {
 			var message = $scope.message;
+			if($scope.name === '') {
+				$scope.name = 'Anonymous';
+			}
 			var name = $scope.name;
 			var el = angular.element(document.querySelector('#chatbox'));
 			el.append('<div>'+ name +': '+message + '</div>'); 
