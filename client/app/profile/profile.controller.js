@@ -11,6 +11,8 @@
 		
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
+		$scope.addText = addText;
+		$scope.message = '';
 
 		//place this in the resolve
 		profileService.request().then(function(data) {
@@ -35,10 +37,11 @@
 		}
 
 		function addText() {
+			var message = $scope.message;
 			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('Hi'); 
+			el.append('<div>'+ message + '</div>'); 
+			$scope.message = '';
 		}
-		addText();
 
 
 	}

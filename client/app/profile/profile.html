@@ -33,9 +33,12 @@
 		<div class="pull-right"><h5>Total views: {{views}}</h5></div>
 	</div>
 	<div style="padding-right:50px" id="chatbox" class="col-md-3">
-		<h3 style="padding: 10px;">Chat Box</h3>
-		<input type="text" class="form-control" placeholder="Message..."></input>
+		<h3 style="padding: 0px 0px 10px 10px;">Chat</h3>
+		<form ng-submit="addText()">
+			<input type="text" class="form-control" ng-model="message" placeholder="Message..."></input>
+		</form>
 		<div>sup</div>
+		<!-- {{message}} -->
 	</div>
 </div>
 
