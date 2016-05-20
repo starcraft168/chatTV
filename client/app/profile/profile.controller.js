@@ -47,7 +47,7 @@
 			}
 			var name = $scope.name;
 			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('<div>'+ name +': '+message + '</div>'); 
+			el.append('<div style="padding:2px">'+ name +': '+message + '</div>'); 
 			$scope.message = '';
 		}
 
