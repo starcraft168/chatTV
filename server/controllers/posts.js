@@ -1,37 +1,5 @@
-//First add the following two lines at the top of the posts controllers so that we can access
-//our model through var Post
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
-//this is our post.js file located at /server/controllers/post.js
-//note the immediate function and the object that is returned
-
-// module.exports = (function() {
-// 	return {
-// 		show: function(request, response) {
-// 			response.json([{name:'Andrew', age:24}, {name:'Michael', age:35}]);
-// 		}
-// 	}
-// })();
-
-/*
-
-module.exports = {
-	show: function(request, response) {
-		response.json([{name:'Andrew', age:24}, {name:'Michael', age: 35}]);
-	}
-}
-
-wrap it in an IIFE:
-
-(function() {
-	return {
-		show: function()...etc.
-
-	};
-})();
-
-*/
-
 
 module.exports = (function() {
 	return {
@@ -47,10 +15,7 @@ module.exports = (function() {
 		create: function(request, response){
 			var post = new Post({
 				name: request.body.name, 
-				age: request.body.age,
-				highschool: request.body.highschool,
-				GPA: request.body.GPA,
-				SATscore: request.body.SATscore
+				message:request.body.message
 			})
 
 			post.save(function(error){
@@ -82,11 +47,10 @@ module.exports = (function() {
 		},
 		update: function(request, response){
 			Post.update({_id: request.body.id},
-			 	{name: request.body.name,
-			  	age: request.body.age,
-			  	highschool: request.body.highschool,
-			  	GPA: request.body.GPA,
-			  	SATscore: request.body.SATscore},
+			 	{
+			 		name: request.body.name,
+			  		message: request.body.message
+			  },
 
 			  	function(error, result){
 				if(error){
@@ -98,5 +62,3 @@ module.exports = (function() {
 		}
 	}
 })();
-//note that this is just a code snippet of the show method from the object returned in the controller
-//this includes the exports module.exports

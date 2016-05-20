@@ -11,7 +11,6 @@
 		
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
-		$scope.searchVideo = searchVideo;
 
 		//place this in the resolve
 		profileService.request().then(function(data) {
@@ -35,9 +34,11 @@
 			$scope.preview = video.preview;
 		}
 
-		function searchVideo() {
-
+		function addText() {
+			var el = angular.element(document.querySelector('#chatbox'));
+			el.append('Hi'); 
 		}
+		addText();
 
 
 	}
