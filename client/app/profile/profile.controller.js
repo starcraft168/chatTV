@@ -11,7 +11,7 @@
 		
 		loadVideos();
 		getMessages();
-		
+
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
 		$scope.addText = addText;
@@ -31,10 +31,17 @@
 		}
 
 		function getMessages() {
-			profileService.getMessages();
+			profileService.getMessages().then(function(data) {
+				angular.forEach(data, function(value, key) {
+					appendMessages(value.name, value.message);
+				})
+			});
 		}
 
-
+		function appendMessages(name, message) {
+			var el = angular.element(document.querySelector('#chatbox'));
+			el.append('<div style="padding:2px">'+ name +': '+ message + '</div>'); 
+		}
 
 
 		function getIframeSrc(videoId) {
@@ -56,7 +63,7 @@
 			}
 			var name = $scope.name;
 			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('<div style="padding:2px">'+ name +': '+message + '</div>'); 
+			el.append('<div style="padding:2px">'+ name +': '+ message + '</div>'); 
 			$scope.message = '';
 		}
 

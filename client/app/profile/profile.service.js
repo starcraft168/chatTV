@@ -34,8 +34,8 @@
 				method:'GET',
 				url:'/posts'
 			}).then(function(response) {
-				console.log('success getMessages');
-				console.log(response.data);
+				console.log('success in getMessages');
+				return response.data;
 			}).catch(function(response) {
 				console.log('error in getMessages')
 			});
