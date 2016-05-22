@@ -10,6 +10,8 @@
 	function profileController($scope, $sce, profileService) {
 		
 		loadVideos();
+		getMessages();
+		
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
 		$scope.addText = addText;
@@ -18,7 +20,7 @@
 
 		//place this in the resolve
 		function loadVideos() {
-			profileService.request().then(function(data) {
+			profileService.downloadVideos().then(function(data) {
 				$scope.title = data.videos[0].title;
 				$scope.currentVideo = data.videos[0]._id;
 				$scope.views = data.videos[0].views;
@@ -27,6 +29,13 @@
 				console.log('all video data', $scope.videos);
 			});			
 		}
+
+		function getMessages() {
+			profileService.getMessages();
+		}
+
+
+
 
 		function getIframeSrc(videoId) {
 			return $sce.trustAsResourceUrl("http://player.twitch.tv/?video=" + videoId +"/&muted=true/&autoplay=false");
@@ -50,6 +59,7 @@
 			el.append('<div style="padding:2px">'+ name +': '+message + '</div>'); 
 			$scope.message = '';
 		}
+
 
 
 	}

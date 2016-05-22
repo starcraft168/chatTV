@@ -10,13 +10,14 @@
 	function profileService($http) {
 
 		var service = {
-			request: request,
+			downloadVideos: downloadVideos,
+			getMessages: getMessages
 		}
 
 		return service;
 
 		////////////////
-		function request() {
+		function downloadVideos() {
 			return $http({
 				method: 'GET',
 				url: 'https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=week&limit=100'
@@ -25,6 +26,18 @@
 				return response.data;
 			}).catch(function(response) {
 				console.log('error');
+			});
+		}
+
+		function getMessages() {
+			return $http({
+				method:'GET',
+				url:'/posts'
+			}).then(function(response) {
+				console.log('success getMessages');
+				console.log(response.data);
+			}).catch(function(response) {
+				console.log('error in getMessages')
 			});
 		}
 

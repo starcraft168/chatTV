@@ -6,7 +6,7 @@ module.exports = (function() {
 		show: function(request, response) {
 			Post.find({}, function(error, results) {
 				if(error) {
-					console.log('error in show main');
+					console.log('error in show posts');
 				} else {
 					response.json(results);
 				}
