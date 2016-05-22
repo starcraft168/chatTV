@@ -11,7 +11,8 @@
 
 		var service = {
 			downloadVideos: downloadVideos,
-			getMessages: getMessages
+			getMessages: getMessages,
+			postMessage: postMessage
 		}
 
 		return service;
@@ -38,6 +39,21 @@
 				return response.data;
 			}).catch(function(response) {
 				console.log('error in getMessages')
+			});
+		}
+
+		function postMessage() {
+			return $http({
+				method: 'POST',
+				url:'/addpost',
+				data: {
+					name: 'Micky Mouse',
+					message: 'This is great'
+				}
+			}).then(function(response) {
+				console.log('successfully posted message');
+			}).catch(function(response) {
+				console.log('failed to post message');
 			});
 		}
 

@@ -11,6 +11,7 @@
 		
 		loadVideos();
 		getMessages();
+		postMessages();
 
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
@@ -36,6 +37,12 @@
 					appendMessages(value.name, value.message);
 				})
 			});
+		}
+
+		//work on posting messages to the DB
+		function postMessages() {
+			profileService.postMessage();
+
 		}
 
 		function appendMessages(name, message) {

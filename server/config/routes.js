@@ -8,6 +8,7 @@ module.exports = function(app) {
 	});
 
 	app.post('/addpost', function(request, response){
+		console.log('make request to /addpost');
 		posts.create(request, response)
 	});
 
