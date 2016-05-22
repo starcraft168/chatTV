@@ -3,7 +3,8 @@ var posts = require('../controllers/posts.js');
 
 module.exports = function(app) {
 	app.get('/posts', function(request, response) {
-		console.log('hi');
+		console.log('make request to /posts');
+		console.log('response body', response);
 		posts.show(request, response);
 	});
 
