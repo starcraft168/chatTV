@@ -12,9 +12,6 @@ app.use(express.static(path.join(__dirname, './client')));
 require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
 
-
-// require('./server/config/routes.js')(app);
-
 app.listen(3000, function() {
 	console.log('listening to port 3000');
 });
