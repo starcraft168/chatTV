@@ -24,7 +24,7 @@ module.exports = function(app) {
 	});
 
 	app.get('/data', function(request, response) {
-		console.log('sup foo');
+		console.log('new route called data');
 	});
 };
 

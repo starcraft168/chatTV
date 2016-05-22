@@ -4,8 +4,8 @@ var Post = mongoose.model('Post');
 module.exports = (function() {
 	return {
 		show: function(request, response) {
-			Post.find({}, function(err, results) {
-				if(err) {
+			Post.find({}, function(error, results) {
+				if(error) {
 					console.log('error in show main');
 				} else {
 					response.json(results);
