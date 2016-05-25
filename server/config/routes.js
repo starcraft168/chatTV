@@ -9,19 +9,19 @@ module.exports = function(app) {
 
 	app.post('/addpost', function(request, response){
 		console.log('make request to /addpost');
-		posts.create(request, response)
+		posts.create(request, response);
 	});
 
 	app.post('/removepost', function(request, response){
-		posts.destroy(request, response)
+		posts.destroy(request, response);
 	});
 
 	app.post('/updatepost', function(request, response){
-		posts.update(request, response)
+		posts.update(request, response);
 	});
 
 	app.get('/getPostById/:id', function(request, response){
-		posts.find_by_id(request, response)
+		posts.find_by_id(request, response);
 	});
 
 	app.get('/data', function(request, response) {

@@ -20,21 +20,21 @@ module.exports = (function() {
 
 			post.save(function(error){
 				if(error){
-					console.log('error in create')
+					console.log('error in create');
 				} else {
-					console.log('success')
+					console.log('successfully posted to the DB');
+					response.end();
 				}
 			})
-			// response.send();
 		},
 		destroy: function(request, response){
 			Post.remove({_id: request.body.id}, function(error){
 				if(error){
-					console.log('error in destroy')
+					console.log('error in destroy');
 				} else {
-					console.log('success')
+					console.log('success');
+					response.end();
 				}
-				response.end();
 			})
 		},
 		find_by_id: function(request, response){
@@ -51,14 +51,13 @@ module.exports = (function() {
 			 	{
 			 		name: request.body.name,
 			  		message: request.body.message
-			  },
-
-			  	function(error, result){
-				if(error){
-					console.log('error in update ')
-				} else {
-					console.log('success')
-				}
+			  }, function(error, result){
+					if(error){
+						console.log('error in update ')
+					} else {
+						console.log('success')
+						response.end();
+					}
 			})
 		}
 	}

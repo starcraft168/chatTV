@@ -43,11 +43,6 @@
 		}
 
 		function postMessage(name, message) {
-			// var data = {
-			// 	name: 'Eric',
-			// 	message: 'Sup foo'
-			// }
-
 			var data = {
 				name: name,
 				message: message

@@ -9,7 +9,6 @@
 
 	function profileController($scope, $sce, profileService) {
 		
-		// postMessage();
 		loadVideos();
 		getMessages();
 
@@ -19,7 +18,6 @@
 		$scope.message = '';
 		$scope.name = '';
 
-		//place this in the resolve
 		function loadVideos() {
 			profileService.downloadVideos().then(function(data) {
 				$scope.title = data.videos[0].title;
@@ -40,15 +38,16 @@
 		}
 
 		function postMessage(name, message) {
-			console.log('heres the name', name);
-			console.log('heres the message', message);
-			appendMessage(name, message);
-			profileService.postMessage(name, message);
+			profileService.postMessage(name, message).then(function(error) {
+				console.log('successfully posted data to server', error);
+			}).catch(function(error) {
+				console.log('did not post to server', error);
+			});
 		}
 
 		function appendMessage(name, message) {
 			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('<div style="padding:2px">'+ name +': '+ message + '</div>'); 
+			el.append('<div style="padding:2px">'+ '<span color:green>' + name +': </span>'+ message + '</div>'); 
 		}
 
 
@@ -63,18 +62,23 @@
 			$scope.preview = video.preview;
 		}
 
-		//need to save the message in the server
 		function addText() {
+			if($scope.message === '') {
+				$scope.message = '...'
+			}
 			var message = $scope.message;
 			if($scope.name === '') {
 				$scope.name = 'Anonymous';
 			}
 			var name = $scope.name;
+
+			//append message to the UI
 			appendMessage(name, message);
+
+			//post message to the server
+			postMessage(name, message);
 			$scope.message = '';
 		}
 
 	}
-
-
 })();
