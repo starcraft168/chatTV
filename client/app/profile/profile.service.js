@@ -43,13 +43,15 @@
 		}
 
 		function postMessage() {
+			var data = {
+				name: 'Eric',
+				message: 'Sup foo'
+			}
+
 			return $http({
 				method: 'POST',
 				url:'/addpost',
-				data: {
-					name: 'Micky Mouse',
-					message: 'This is great'
-				}
+				data: data
 			}).then(function(response) {
 				console.log('successfully posted message');
 			}).catch(function(response) {

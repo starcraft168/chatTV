@@ -19,12 +19,13 @@ module.exports = (function() {
 			})
 
 			post.save(function(error){
-				if (error){
+				if(error){
 					console.log('error in create')
 				} else {
 					console.log('success')
 				}
 			})
+			// response.send();
 		},
 		destroy: function(request, response){
 			Post.remove({_id: request.body.id}, function(error){

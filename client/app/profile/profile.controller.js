@@ -39,7 +39,6 @@
 			});
 		}
 
-		//work on posting messages to the DB
 		function postMessages() {
 			profileService.postMessage();
 
