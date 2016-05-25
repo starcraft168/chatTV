@@ -8,7 +8,7 @@
 	profileController.$inject = ['$scope', '$sce', 'profileService'];
 
 	function profileController($scope, $sce, profileService) {
-		
+
 		loadVideos();
 		getMessages();
 
@@ -47,7 +47,7 @@
 
 		function appendMessage(name, message) {
 			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('<div style="padding:2px">'+ '<span color:green>' + name +': </span>'+ message + '</div>'); 
+			el.append('<div style="padding:2px">'+ '<span style="color:red">' + name +': </span>'+ message + '</div>'); 
 		}
 
 

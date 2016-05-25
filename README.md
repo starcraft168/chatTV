@@ -2,7 +2,7 @@
 Watch live TV and chat about the experience.
 
 ##Project Description
-A web application that enables users to watch live streaming television while chatting about the experience in real-time. Developed front-end using Angular, Twitch API, Twitter Bootstrap, HTML/CSS/jQuery, Node.js, and MongoDB. Formerly used Firechat before migrating to  Node/MongoDB.
+A web application that enables users to watch live streaming television while chatting about the experience in real-time. Developed front-end using Angular, Twitch API, Twitter Bootstrap, HTML/CSS, Node.js, and MongoDB. Formerly used Firechat before migrating to Node/MongoDB.
 
 
 ## Contributing
