@@ -9,9 +9,9 @@
 
 	function profileController($scope, $sce, profileService) {
 		
+		// postMessage();
 		loadVideos();
 		getMessages();
-		postMessages();
 
 		$scope.getIframeSrc = getIframeSrc;
 		$scope.selectVideo = selectVideo;
@@ -34,17 +34,19 @@
 		function getMessages() {
 			profileService.getMessages().then(function(data) {
 				angular.forEach(data, function(value, key) {
-					appendMessages(value.name, value.message);
+					appendMessage(value.name, value.message);
 				})
 			});
 		}
 
-		function postMessages() {
-			profileService.postMessage();
-
+		function postMessage(name, message) {
+			console.log('heres the name', name);
+			console.log('heres the message', message);
+			appendMessage(name, message);
+			profileService.postMessage(name, message);
 		}
 
-		function appendMessages(name, message) {
+		function appendMessage(name, message) {
 			var el = angular.element(document.querySelector('#chatbox'));
 			el.append('<div style="padding:2px">'+ name +': '+ message + '</div>'); 
 		}
@@ -68,12 +70,9 @@
 				$scope.name = 'Anonymous';
 			}
 			var name = $scope.name;
-			var el = angular.element(document.querySelector('#chatbox'));
-			el.append('<div style="padding:2px">'+ name +': '+ message + '</div>'); 
+			appendMessage(name, message);
 			$scope.message = '';
 		}
-
-
 
 	}
 

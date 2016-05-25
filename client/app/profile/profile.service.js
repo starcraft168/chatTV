@@ -42,10 +42,15 @@
 			});
 		}
 
-		function postMessage() {
+		function postMessage(name, message) {
+			// var data = {
+			// 	name: 'Eric',
+			// 	message: 'Sup foo'
+			// }
+
 			var data = {
-				name: 'Eric',
-				message: 'Sup foo'
+				name: name,
+				message: message
 			}
 
 			return $http({
