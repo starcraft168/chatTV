@@ -1,8 +1,12 @@
 {
-	"name": "chatTV",
-	"dependencies": {
-		"express": "latest",
-		"mongoose": "latest",
-		"body-parser":"latest"
-	}
+  "name": "chatTV",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "body-parser": "latest"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
 }
